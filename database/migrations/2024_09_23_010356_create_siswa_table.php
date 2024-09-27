@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('siswa', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('siswa_id');
-            $table->char('nis',8);
-            $table->unsignedBigInteger('kelas_id');
+            $table->unsignedBigInteger('user_id')->default(null);
+            $table->char('nis');
+            $table->string('kelas');
+            $table->string('jurusan');
             $table->text('alamat');
-            $table->char('no_hp', 15);
-            $table->string('siswa_keluar');
+            $table->char('no_hp');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('user');
         });
     }
 

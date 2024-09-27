@@ -103,7 +103,7 @@
                             <td class="green">{{ $data->lunas }}</td>
                             <td class="red">{{ $data->sisa }}</td>     
                             @empty
-                            <div class="alert alert-danger">
+                            <div class="alert alert-success">
                                 Data masih kosong
                             </div>
                             @endforelse
@@ -127,8 +127,8 @@
                             <td class="green">{{ $data->siswa_keluar }}</td>
                             <td class="red">{{ $data->siswa_lulus }}</td>
                             @empty
-                            <div class="alert alert-danger">
-                                Data masih kasih
+                            <div class="alert alert-success">
+                                Data masih kosong
                             </div>
                                 
                             @endforelse

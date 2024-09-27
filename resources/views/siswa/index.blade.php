@@ -85,35 +85,52 @@
 </form>
 
 <div class="container mt-3">
+  @if (Session::has('success'))
+ <div class="alert alert-success">Data berhasil di tambahkan</div>
+  @elseif(Session::has('error'))
+  <div class="alert alert-dager">Data gagal di tambahkan</div>
+  @endif
+
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th><b>NO</b></th>
-                            <th><b>Wali Murid</b></th>
                             <th><b>Nama</b></th>
                             <th><b>NISN</b></th>
                             <th><b>Kelas</b></th>
                             <th><b>Jurusan</b></th>
-                            <th><b>Total Biaya</b></th>
+                            <th><b>Alamat</b></th>
+                            <th><b>No Hp</b></th>
                             <th><b>Aksi</b></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>01</td>
-                            <td>Siti Badriah</td>
-                            <td>Lutfi Aditya</td>
-                            <td>00129192</td>
-                            <td>12</td>
-                            <td>RPL</td>
-                            <td>25.900.000</td>
-                            <td>
-                                <a href="" class="btn btn-success btn-sm">ubah</a>
-                                <a href="" class="btn btn-danger btn-sm">hapus</a>
-                            </td>
+                          @php
+                              $i = 1;
+                          @endphp
+                          @forelse ($alldata as $siswa)
+                          <tr>
+                              <td>{{ $i }}</td>
+                              <td>{{ $siswa->user->nama }}</td>
+                              <td>{{ $siswa->nis }}</td>
+                              <td>{{ $siswa->kelas }}</td>
+                              <td>{{ $siswa->jurusan }}</td>
+                              <td>{{ $siswa->alamat }}</td>
+                              <td>{{ $siswa->no_hp }}</td>
+                              <td>
+                              <a href="" class="btn btn-success btn-sm">ubah</a>
+                              <a href="" class="btn btn-danger btn-sm">hapus</a>
+                              </td>
+                              @php
+                              $i++;
+                             @endphp
+                          @empty
+                          <div class="alert alert-success">Data masih kosong</div>                              
+                          @endforelse
                         </tr>
                     </tbody>
                 </table>
+                {{ $paginate->links() }}
             </div>
-
 @endsection

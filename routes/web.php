@@ -10,3 +10,4 @@ Route::get('/', [ LoginController::class, 'index']);
 //siswa
 Route::get('/siswa', [ SiswaController::class, 'index' ]);
 Route::get('/siswa/tambah', [ SiswaController::class, 'tambah']);
+Route::post('/siswa/simpan', [ SiswaController::class, 'simpan']);

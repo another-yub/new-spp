@@ -1,41 +1,52 @@
-@extends('main.navbar')
-@section('content')
+@extends('main.input')
 
-       <!-- START FORM -->
-       <div class="container d-flex">
-        <form action='' method='post'>
-            @csrf
-            <div class="my-3 p-3 bg-body rounded shadow-sm">
-                <div class="mb-3 row">
-                    <label for="wali-murid" class="col-sm-2 col-form-label">Wali Murid</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name='wali-murid' id="wali-murid">
+@section('input')
+                <div class="container">
+                    <div class="text-center mt-4">
+                        <h4><b>Tambah Data</b></h4>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name='nama' id="nama">
+                    <form action="/siswa/simpan" method="POST">
+                        @csrf
+                        <div class="mb-1">
+                            <a href="{{ url('/siswa') }}" class="btn btn-sm btn-secondary"><< kembali</a>
+
+                        </div>
+                    <div>
+                        <label for="email">Email : </label>
+                        <input type="email" name="email" id="email" class="form-control" required>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="nisn" class="col-sm-2 col-form-label">Nisn</label>
-                    <div class="col sm-10">
-                        <input type="number" name="nisn" id="nisn" class="form-control">
+                    <div>
+                        <label for="password">Password : </label>
+                        <input type="password" name="password" id="password" class="form-control" required>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="jurusan" class="col-sm-2 col-form-label">Jurusan</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name='jurusan' id="jurusan">
+                    <div>
+                        <label for="nama">Nama : </label>
+                        <input type="text" name="nama" id="nama" class="form-control">
                     </div>
+                    <div>
+                        <label for="nis">Nis : </label>
+                        <input type="text" name="nis" id="nis" class="form-control">
+                    </div>
+                    <div>
+                        <label for="kelas">Kelas : </label>
+                        <input type="text" name="kelas" id="kelas" class="form-control">
+                    </div>
+                    <div>
+                        <label for="jurusan">Jurusan : </label>
+                        <input type="text" name="jurusan" id="jurusan" class="form-control">
+                    </div>
+                    <div>
+                        <label for="alamat">Alamat : </label>
+                        <input type="text" name="alamat" id="alamat" class="form-control">
+                    </div>
+                    <div>
+                        <label for="no_hp">Hp : </label>
+                        <input type="number" name="no_hp" id="no_hp" class="form-control">
+                    </div>  
+                    <div class="mt-3 text-end">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>              
                 </div>
-                <div class="mb-3 row">
-                    <label for="jurusan" class="col-sm-2 col-form-label"></label>
-                    <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">SIMPAN</button></div>
-                </div>
-            </div>
-        </form>
-            <!-- AKHIR FORM -->    
-       </div>
+            </form>
 @endsection
