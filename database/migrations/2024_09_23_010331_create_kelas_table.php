@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
             $table->string('kelas', 50);
-            $table->string('kompetensi_keahlian', 50);
+            $table->string('kompetensi_keahlian');
             $table->timestamps();
         });
     }

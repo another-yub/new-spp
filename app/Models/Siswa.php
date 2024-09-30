@@ -17,10 +17,14 @@ class Siswa extends Model
         'kelas',
         'jurusan',
         'alamat',
-        'no_hp'
+        'no_hp',
     ];
 
     public function user() {
         return $this->belongsTo(User::class, 'id');
+    }
+
+    public function pembayaran() {
+        return $this->belongsTo(Pembayaran::class, 'id');
     }
 }

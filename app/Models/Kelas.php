@@ -14,5 +14,4 @@ class Kelas extends Model
         'kelas',
         'kompetensi_keahlian'
     ];
-
 }

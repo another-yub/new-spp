@@ -11,9 +11,9 @@
           Siswa
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{{ url('/siswa') }}">home</a>
-          <a class="dropdown-item" href="#">bayar</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="/siswa">siswa</a>
+          <a class="dropdown-item" href="/kelas">kelas</a>
+          <a class="dropdown-item" href="/bayar">bayar</a>
         </div>
       </li>
       <li class="nav-item dropdown">

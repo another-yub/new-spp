@@ -9,7 +9,7 @@ class Pembayaran extends Model
 {
     use HasFactory;
 
-    protected $table = 'siswa';
+    protected $table = 'pembayaran';
 
     protected $fillable = [
         'user_id',
@@ -18,4 +18,18 @@ class Pembayaran extends Model
         'alamat',
         'no_hp'
     ];
+
+    public function user()
+    {
+      return $this->belongsTo(User::class);
+    }
+    public function spp()
+    {
+      return $this->belongsTo(Spp::class);
+    }
+    public function siswa()
+    {
+      return  $this->belongsTo(Siswa::class);
+    }
+
 }

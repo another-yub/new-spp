@@ -20,4 +20,8 @@ class Spp extends Model
         'siswa_keluar',
         'siswa_lulus',
     ];
+
+    public function pembayaran() {
+        return $this->belongsTo(Pembayaran::class, 'id');
+    }
 }

@@ -67,8 +67,8 @@
 </nav>
 
 <div class="text-center mt-3">
-<h1 class="mb-5"><b>Data Siswa</b></h1>
-<div id="deks2"><a href="{{ url('/siswa/tambah') }}"><font color="white">Tambah Siswa</font></a></div>
+<h1 class="mb-5"><b>Data Kelas</b></h1>
+<div id="deks2"><a href="{{ url('/kelas/tambah') }}"><font color="white">Tambah Kelas</font></a></div>
 </div>
 <form action="">
 <div class="container">
@@ -105,12 +105,8 @@
                     <thead>
                         <tr>
                             <th><b>NO</b></th>
-                            <th><b>Nama</b></th>
-                            <th><b>NISN</b></th>
                             <th><b>Kelas</b></th>
-                            <th><b>Jurusan</b></th>
-                            <th><b>Alamat</b></th>
-                            <th><b>No Hp</b></th>
+                            <th><b>Kompetensi Keahlian</b></th>
                             <th><b>Aksi</b></th>
                         </tr>
                     </thead>
@@ -118,18 +114,14 @@
                           @php
                               $i = 1;
                           @endphp
-                          @forelse ($alldata as $siswa)
+                          @forelse ($datakelas as $kelas)
                           <tr>
                               <td>{{ $i }}</td>
-                              <td>{{ $siswa->user->nama }}</td>
-                              <td>{{ $siswa->nis }}</td>
-                              <td>{{ $siswa->kelas }}</td>
-                              <td>{{ $siswa->jurusan }}</td>
-                              <td>{{ $siswa->alamat }}</td>
-                              <td>{{ $siswa->no_hp }}</td>
+                              <td>{{ $kelas->kelas }}</td>
+                              <td>{{ $kelas->kompetensi_keahlian }}</td>
                               <td>
-                              <a href='{{ url("siswa/edit/$siswa->id") }}' class="btn btn-success btn-sm">ubah</a>
-                              <a href='{{ url("siswa/delete/$siswa->id") }}' class="btn btn-danger btn-sm">hapus</a>
+                              <a href='{{ url("kelas/edit/$kelas->id") }}' class="btn btn-success btn-sm">ubah</a>
+                              <a href='{{ url("kelas/delete/$kelas->id") }}' class="btn btn-danger btn-sm">hapus</a>
                               </td>
                               @php
                               $i++;
@@ -140,6 +132,6 @@
                         </tr>
                     </tbody>
                 </table>
-                {{ $paginate->links() }}
+                {{ $datakelas->links() }}
             </div>
 @endsection
