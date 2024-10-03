@@ -29,11 +29,21 @@
                     </div>
                     <div>
                         <label for="kelas">Kelas : </label>
-                        <input type="text" name="kelas" id="kelas" class="form-control">
+                        <select name="kelas" class="form-select form-control" aria-label="Default select example">
+                            <option selected>Pilih kelas</option>
+                            @foreach ($allkelas as $kelas)
+                            <option value="{{ $kelas->kelas }}">{{ $kelas->kelas }}</option>
+                            @endforeach
+                          </select>
                     </div>
                     <div>
                         <label for="jurusan">Jurusan : </label>
-                        <input type="text" name="jurusan" id="jurusan" class="form-control">
+                        <select name="jurusan" class="form-select form-control" aria-label="Default select example">
+                            <option selected>Pilih jurusan</option>
+                            @foreach ($allkelas as $kelas)
+                            <option value="{{ $kelas->kompetensi_keahlian }}">{{ $kelas->kompetensi_keahlian }}</option>
+                            @endforeach
+                          </select>
                     </div>
                     <div>
                         <label for="alamat">Alamat : </label>

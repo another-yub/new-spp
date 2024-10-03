@@ -72,7 +72,7 @@
   <body>
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <img src="https://disdikbud.banyuasinkab.go.id/wp-content/uploads/sites/269/2022/11/Logo-Tut-Wuri-Handayani-PNG-Warna.png" width="30" height="30" alt="">
+    <img src="https://smkmussi.sch.id/img_anekaweb/pengumuman/small_200708Logo%20Baru%20SMK%20Mussi_Modif2.jpg" width="30" height="30" alt="">
     SPP SEKOLAH
     <p class="container" id="deks">SMK MUHAMMADIYAH KESESI</P>
   </a>

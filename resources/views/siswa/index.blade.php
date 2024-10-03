@@ -70,12 +70,11 @@
 <h1 class="mb-5"><b>Data Siswa</b></h1>
 <div id="deks2"><a href="{{ url('/siswa/tambah') }}"><font color="white">Tambah Siswa</font></a></div>
 </div>
-<form action="">
+<form action="/siswa/search" method="GET">
 <div class="container">
     <div class="row">
         <div class="col-md-4 offset-md-4 search-box mt-2">
-            <input type="search" class="form-control" placeholder="Cari berdasarkan nama, nis, atau kelas.....">
-            
+            <input name="search" type="text" class="form-control" placeholder="Cari berdasarkan nama, nis, atau kelas....." autofocus>         
         </div>
     </div>
     <div class="text-center container mt-1">

@@ -70,19 +70,19 @@
 <h1 class="mb-5"><b>Data Kelas</b></h1>
 <div id="deks2"><a href="{{ url('/kelas/tambah') }}"><font color="white">Tambah Kelas</font></a></div>
 </div>
-<form action="">
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 offset-md-4 search-box mt-2">
-            <input type="search" class="form-control" placeholder="Cari berdasarkan nama, nis, atau kelas.....">
-            
-        </div>
-    </div>
-    <div class="text-center container mt-1">
-    <button type="submit" class="btn btn-primary btn-sm circle">Cari</button>
-    <button type="reset" class="btn btn-secondary btn-sm circle">Batal</button></div>
-</div>
-</form>
+<form action="/siswa/search" method="GET">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 offset-md-4 search-box mt-2">
+              <input name="search" type="text" class="form-control" placeholder="Cari berdasarkan nama, nis, atau kelas....." autofocus>         
+          </div>
+      </div>
+      <div class="text-center container mt-1">
+      <button type="submit" class="btn btn-primary btn-sm circle">Cari</button>
+      <button type="reset" class="btn btn-secondary btn-sm circle">Batal</button></div>
+  </div>
+  </form>
+  
 
 <div class="container mt-3">
   @if (Session::has('success'))

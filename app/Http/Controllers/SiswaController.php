@@ -16,8 +16,8 @@ class SiswaController extends Controller
     return view('siswa.index', compact('alldata', 'paginate'));
     }
     public function tambah() {
-        $kelas = Kelas::all();
-        return view('siswa.tambah', compact('kelas'));
+        $allkelas = Kelas::all();
+        return view('siswa.tambah', compact('allkelas'));
     }
     public function simpan(Request $request){
 
@@ -49,8 +49,8 @@ class SiswaController extends Controller
         try {
 
             $siswa = Siswa::findOrFail($id);
-            $kelas = Kelas::all();
-            return view('siswa.ubah', compact('siswa', 'kelas'));
+            $allkelas = Kelas::all();
+            return view('siswa.ubah', compact('siswa', 'allkelas'));
         } catch (\Throwable $th) {
             return redirect('siswa')->with(['error' => 'Data telah gagal']);
         }
